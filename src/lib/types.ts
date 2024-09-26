@@ -90,9 +90,10 @@ export type TCPlayerEvent =
 	| 'resolutionswitched'
 	| 'fullscreenchange'
 	| 'webrtcevent'
-	| 'webrtcstats';
+	| 'webrtcstats'
+	| (string & {});
 
-export interface TCPlayer {
+export interface TCPlayerApi {
 	src(value: string): void;
 	ready(callback: () => void): void;
 	play(): void;
@@ -119,4 +120,31 @@ export interface TCPlayer {
 	videoWidth(): number;
 	videoHeight(): number;
 	dispose(): void;
+}
+
+export interface TCPlayerProps {
+	options: TCPlayerOptions;
+	onplay?(...args: any): void;
+	onplaying?(...args: any): void;
+	onloadstart?(...args: any): void;
+	ondurationchange?(...args: any): void;
+	onloadedmetadata?(...args: any): void;
+	onloadeddata?(...args: any): void;
+	onprogress?(...args: any): void;
+	oncanplay?(...args: any): void;
+	oncanplaythrough?(...args: any): void;
+	onerror?(...args: any): void;
+	onpause?(...args: any): void;
+	onratechange?(...args: any): void;
+	onseeked?(...args: any): void;
+	onseeking?(...args: any): void;
+	ontimeupdate?(...args: any): void;
+	onvolumechange?(...args: any): void;
+	onwaiting?(...args: any): void;
+	onended?(...args: any): void;
+	onresolutionswitching?(...args: any): void;
+	onresolutionswitched?(...args: any): void;
+	onfullscreenchange?(...args: any): void;
+	onwebrtcevent?(...args: any): void;
+	onwebrtcstats?(...args: any): void;
 }
