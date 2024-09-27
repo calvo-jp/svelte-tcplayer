@@ -3,9 +3,9 @@
 
 import type {TCPlayerApi, TCPlayerOptions} from '../types.js';
 
-const noop = (..._: any): any => undefined;
+const noop = (..._args: any): any => undefined;
 
-export function createTCPlayer(_0: HTMLVideoElement, _1: TCPlayerOptions): TCPlayerApi {
+export function createTCPlayer(_elem: HTMLVideoElement, _opts: TCPlayerOptions): TCPlayerApi {
   return {
     get buffered() {
       return undefined;
@@ -19,14 +19,13 @@ export function createTCPlayer(_0: HTMLVideoElement, _1: TCPlayerOptions): TCPla
     get duration() {
       return 0;
     },
+    set height(_value) {},
     get height() {
       return 0;
     },
-    get isFullscreen() {
-      return false;
-    },
-    get poster() {
-      return '';
+    set width(_value) {},
+    get width() {
+      return 0;
     },
     get videoHeight() {
       return 0;
@@ -34,10 +33,15 @@ export function createTCPlayer(_0: HTMLVideoElement, _1: TCPlayerOptions): TCPla
     get videoWidth() {
       return 0;
     },
-    get volume() {
-      return 0;
+    get isFullscreen() {
+      return false;
     },
-    get width() {
+    set poster(_value) {},
+    get poster() {
+      return '';
+    },
+    set volume(_value) {},
+    get volume() {
       return 0;
     },
     on: noop,
