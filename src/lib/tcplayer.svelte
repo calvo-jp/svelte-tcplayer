@@ -1,16 +1,16 @@
 <script lang="ts">
-  import { createTCPlayer } from './tcplayer.js';
-  import type { TCPlayerApi, TCPlayerProps } from './types.js';
+  import {createTCPlayer} from './tcplayer.js';
+  import type {TCPlayerApi, TCPlayerProps} from './types.js';
 
-  let { options, ...events }: TCPlayerProps = $props();
+  let {id, style, class: klass, options, ...events}: TCPlayerProps = $props();
 
   let video: HTMLVideoElement | null = $state(null);
   let player: TCPlayerApi | null = $state(null);
 
   $effect(() => {
-    if (!video) return;
-
-    player = createTCPlayer(video, options);
+    if (video) {
+      player = createTCPlayer(video, options);
+    }
   });
 
   $effect(() => {
@@ -34,6 +34,6 @@
   });
 </script>
 
-<video bind:this={video}>
+<video {id} {style} class={klass} bind:this={video}>
   <track kind="captions" />
 </video>

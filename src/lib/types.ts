@@ -123,6 +123,9 @@ export interface TCPlayerApi {
 }
 
 export interface TCPlayerProps {
+  id?: string;
+  class?: string;
+  style?: string;
   options: TCPlayerOptions;
   onplay?(...args: any): void;
   onplaying?(...args: any): void;

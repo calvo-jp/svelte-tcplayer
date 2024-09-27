@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { TCPlayerProps } from '$lib/types.js';
+  import type {TCPlayerProps} from '$lib/types.js';
 
   let _: TCPlayerProps = $props();
 </script>
