@@ -7,6 +7,23 @@
   "publishConfig": {
     "access": "public"
   },
+  "author": {
+    "name": "John Paul Calvo",
+    "email": "calvojp92@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calvo-jp/svelte-tcplayer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/calvo-jp/svelte-tcplayer/issues",
+    "email": "calvojp92@gmail.com"
+  },
+  "description": "TCPlayer for Svelte",
+  "keywords": [
+    "TCPlayer",
+    "Svelte"
+  ],
   "scripts": {
     "dev": "vite dev",
     "build": "vite build && npm run package",
@@ -40,28 +57,28 @@
     "svelte": "^5.0.0-next.1"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "^3.2.5",
-    "@sveltejs/kit": "^2.6.0",
-    "@sveltejs/package": "^2.3.5",
-    "@sveltejs/vite-plugin-svelte": "^4.0.0-next.6",
-    "@types/eslint": "^9.6.1",
-    "eslint": "^9.11.1",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-svelte": "^2.44.0",
-    "globals": "^15.9.0",
-    "prettier": "^3.3.3",
-    "prettier-plugin-svelte": "^3.2.7",
-    "publint": "^0.2.11",
-    "release-it": "^17.6.0",
-    "svelte": "^5.0.0-next.159",
-    "svelte-check": "^4.0.3",
-    "typescript": "^5.6.2",
-    "typescript-eslint": "^8.7.0",
-    "vite": "^5.4.8",
-    "vitest": "^2.1.1"
+    "@sveltejs/adapter-auto": "3.2.5",
+    "@sveltejs/kit": "2.6.0",
+    "@sveltejs/package": "2.3.5",
+    "@sveltejs/vite-plugin-svelte": "4.0.0-next.6",
+    "@types/eslint": "9.6.1",
+    "eslint": "9.11.1",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-svelte": "2.44.0",
+    "globals": "15.9.0",
+    "prettier": "3.3.3",
+    "prettier-plugin-svelte": "3.2.7",
+    "publint": "0.2.11",
+    "release-it": "17.6.0",
+    "svelte": "5.0.0-next.159",
+    "svelte-check": "4.0.3",
+    "typescript": "5.6.2",
+    "typescript-eslint": "8.7.0",
+    "vite": "5.4.8",
+    "vitest": "2.1.1"
   },
   "dependencies": {
-    "tcplayer.js": "^5.1.0"
+    "tcplayer.js": "5.1.0"
   },
   "release-it": {
     "git": {
