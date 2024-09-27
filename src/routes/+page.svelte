@@ -6,7 +6,7 @@
   import type {TCPlayerProps} from '$lib/types.js';
   import type {Component} from 'svelte';
 
-  let TCPlayer: Component<TCPlayerProps>;
+  let TCPlayer: Component<TCPlayerProps> | null = $state(null);
 
   if (browser) {
     import('$lib/tcplayer.svelte').then((m) => (TCPlayer = m.default));
