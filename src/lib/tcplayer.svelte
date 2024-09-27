@@ -1,14 +1,16 @@
 <script lang="ts">
   import {createTCPlayer} from './tcplayer.js';
-  import type {TCPlayerProps} from './types.js';
+  import type {TCPlayerApi, TCPlayerProps} from './types.js';
 
-  let {id, style, class: klass, options, ...events}: TCPlayerProps = $props();
+  let {id, style, class: className, options, ...events}: TCPlayerProps = $props();
 
   let video: HTMLVideoElement | null = $state(null);
+  let player: TCPlayerApi | null = $state(null);
 
-  let player = $derived.by(() => {
-    if (!video) return null;
-    return createTCPlayer(video, options);
+  $effect(() => {
+    if (!video) return;
+
+    player = createTCPlayer(video, options);
   });
 
   $effect(() => {
@@ -28,6 +30,6 @@
   });
 </script>
 
-<video {id} {style} class={klass} bind:this={video}>
+<video bind:this={video} {id} {style} class={className}>
   <track kind="captions" />
 </video>

@@ -7,7 +7,7 @@ if (navigator.userAgent.search(/firefox/gi)) {
   (globalThis as Record<string, unknown>).hlsSrc = null;
 }
 
-interface TCPlayerReturn {
+interface InternalTCPlayerApi {
   src(value: string): void;
   ready(callback: () => void): void;
   play(): void;
@@ -36,33 +36,31 @@ interface TCPlayerReturn {
   dispose(): void;
 }
 
-export function createTCPlayer(target: HTMLVideoElement, options: TCPlayerOptions): TCPlayerApi {
-  const appID = $derived(options.appId);
-  const fileID = $derived(options.fileId);
-  const language = $derived(options.language ?? 'en-US');
+export function createTCPlayer(elem: HTMLVideoElement, opts: TCPlayerOptions): TCPlayerApi {
+  const appID = opts.appId;
+  const fileID = opts.fileId;
+  const language = opts.language ?? 'en-US';
 
-  const QualitySwitcherMenuButton = $derived(options.controlBar?.qualitySwitcherMenuButton);
-  const controlBar = $derived({
-    ...options.controlBar,
+  const QualitySwitcherMenuButton = opts.controlBar?.qualitySwitcherMenuButton;
+  const controlBar = {
+    ...opts.controlBar,
     QualitySwitcherMenuButton,
     qualitySwitcherMenuButton: undefined,
-  });
+  };
 
-  const others = $derived({
-    ...options,
+  const others = {
+    ...opts,
     appId: undefined,
     fileId: undefined,
-  });
+  };
 
-  const player: TCPlayerReturn = $derived(
-    new TCPlayer(target, {
-      ...others,
-      appID,
-      fileID,
-      language,
-      controlBar,
-    }),
-  );
+  const player: InternalTCPlayerApi = new TCPlayer(elem, {
+    ...others,
+    appID,
+    fileID,
+    language,
+    controlBar,
+  });
 
   return {
     get buffered() {
