@@ -42,8 +42,8 @@ export interface TCPlayerWebRTCConfig {
 }
 
 export interface TCPlayerOptions {
-  appID?: string;
-  fileID?: string;
+  appId?: string;
+  fileId?: string;
   sources?: TCPlayerSource[];
   width?: number;
   height?: number;

@@ -11,5 +11,12 @@ export function createTCPlayer(
   target: HTMLVideoElement,
   options: TCPlayerOptions,
 ): TCPlayerApi {
-  return new TCPlayer(target, options);
+  const appID = options.appId;
+  const fileID = options.fileId;
+  const others = {...options};
+
+  delete others.appId;
+  delete others.fileId;
+
+  return new TCPlayer(target, {appID, fileID, ...others});
 }
