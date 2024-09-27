@@ -1,7 +1,7 @@
 <script lang="ts">
   import type {TCPlayerProps} from '$lib/types.js';
 
-  let _: TCPlayerProps = $props();
+  let {}: TCPlayerProps = $props();
 </script>
 
 <video>
