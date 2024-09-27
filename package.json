@@ -25,6 +25,10 @@
       "types": "./dist/index.d.ts",
       "browser": "./dist/index.js",
       "default": "./dist/ssr/index.js"
+    },
+    "./style.css": {
+      "import": "./dist/tcplayer.css",
+      "require": "./dist/tcplayer.css"
     }
   },
   "files": [
