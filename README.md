@@ -12,6 +12,7 @@
 ```svelte
 <script>
   import {TCPlayer} from 'svelte-tcplayer';
+  import 'svelte-tcplayer/style.css';
 </script>
 
 <TCPlayer
