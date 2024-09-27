@@ -1,6 +1,6 @@
 # svelte-tcplayer
 
-TCPlayer for svelte
+[TCPlayer](https://www.npmjs.com/package/tcplayer.js) for [svelte](https://github.com/sveltejs/svelte)
 
 ## Features
 
@@ -28,3 +28,7 @@ TCPlayer for svelte
   }}
 />
 ```
+
+## Related
+
+- [tcplayer.js](https://www.npmjs.com/package/tcplayer.js)
