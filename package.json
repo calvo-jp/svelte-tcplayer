@@ -1,7 +1,7 @@
 {
   "name": "svelte-tcplayer",
   "type": "module",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "license": "MIT",
   "packageManager": "pnpm@9.10.0",
   "publishConfig": {
@@ -27,8 +27,8 @@
       "default": "./dist/ssr/index.js"
     },
     "./style.css": {
-      "import": "./dist/tcplayer.css",
-      "require": "./dist/tcplayer.css"
+      "browser": "./dist/tcplayer.css",
+      "default": "./dist/tcplayer.css"
     }
   },
   "files": [
