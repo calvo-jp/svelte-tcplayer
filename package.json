@@ -27,8 +27,8 @@
       "default": "./dist/ssr/index.js"
     },
     "./style.css": {
-      "browser": "./dist/tcplayer.css",
-      "default": "./dist/ssr/tcplayer.css"
+      "import": "./dist/tcplayer.css",
+      "require": "./dist/tcplayer.css"
     }
   },
   "files": [
