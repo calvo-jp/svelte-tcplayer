@@ -7,26 +7,48 @@ const noop = (..._: any): any => undefined;
 
 export function createTCPlayer(_0: HTMLVideoElement, _1: TCPlayerOptions): TCPlayerApi {
   return {
-    buffered: noop,
-    bufferedPercent: noop,
-    currentTime: noop,
-    dispose: noop,
-    duration: noop,
-    exitFullscreen: noop,
-    height: noop,
-    isFullscreen: noop,
-    off: noop,
+    get buffered() {
+      return undefined;
+    },
+    get bufferedPercent() {
+      return 0;
+    },
+    get currentTime() {
+      return 0;
+    },
+    get duration() {
+      return 0;
+    },
+    get height() {
+      return 0;
+    },
+    get isFullscreen() {
+      return false;
+    },
+    get poster() {
+      return '';
+    },
+    get videoHeight() {
+      return 0;
+    },
+    get videoWidth() {
+      return 0;
+    },
+    get volume() {
+      return 0;
+    },
+    get width() {
+      return 0;
+    },
     on: noop,
     one: noop,
-    poster: noop,
-    ready: noop,
-    requestFullscreen: noop,
+    off: noop,
     src: noop,
-    videoHeight: noop,
-    videoWidth: noop,
-    volume: noop,
-    width: noop,
-    pause: noop,
     play: noop,
+    pause: noop,
+    ready: noop,
+    dispose: noop,
+    requestFullscreen: noop,
+    exitFullscreen: noop,
   };
 }
