@@ -5,10 +5,7 @@ import type {TCPlayerApi, TCPlayerOptions} from '../types.js';
 
 const noop = (..._: any): any => undefined;
 
-export function createTCPlayer(
-  _0: HTMLVideoElement,
-  _1: TCPlayerOptions,
-): TCPlayerApi {
+export function createTCPlayer(_0: HTMLVideoElement, _1: TCPlayerOptions): TCPlayerApi {
   return {
     buffered: noop,
     bufferedPercent: noop,
