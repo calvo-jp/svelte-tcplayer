@@ -1,6 +1,8 @@
 <script lang="ts">
-  import {browser} from '$app/environment';
   import '$lib/tcplayer.css';
+
+  import {browser} from '$app/environment';
+  import {env} from '$env/dynamic/public';
   import type {TCPlayerProps} from '$lib/types.js';
   import type {Component} from 'svelte';
 
@@ -11,17 +13,19 @@
   } else {
     import('$lib/ssr/tcplayer.svelte').then((m) => (TCPlayer = m.default));
   }
+
+  const src =
+    'webrtc://global-lebtest-play.myqcloud.com/live/lebtest?txSecret=f22a813b284137ed10d3259a7b5c224b&txTime=69f1eb8c&tabr_bitrates=d1080p,d540p,d360p&tabr_start_bitrate=d1080p';
 </script>
 
 <div class="container">
   {#if TCPlayer}
     <TCPlayer
       options={{
-        licenseUrl:
-          'https://license.vod-pro.com/license/v2/1329648202_1/v_cube.license',
+        licenseUrl: env.PUBLIC_LICENSE_URL,
         sources: [
           {
-            src: 'webrtc://global-lebtest-play.myqcloud.com/live/lebtest?txSecret=f22a813b284137ed10d3259a7b5c224b&txTime=69f1eb8c&tabr_bitrates=d1080p,d540p,d360p&tabr_start_bitrate=d1080p',
+            src,
           },
         ],
         width: 1920 / 3,
