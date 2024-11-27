@@ -1,5 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+export type Assign<Target extends Record<string, any>, Source extends Record<string, any>> = Omit<
+  Target,
+  keyof Source
+> &
+  Source;
+
 export interface TCPlayerSource {
   src: string;
   type?: string;
@@ -411,9 +417,6 @@ export interface TCPlayerApi {
 }
 
 export interface TCPlayerProps {
-  id?: string;
-  class?: string;
-  style?: string;
   options: TCPlayerOptions;
   /**
    * If playback has started, the `play()` method is called,
